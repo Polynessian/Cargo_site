@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+    <head>
+        {% load static recaptcha3 %}
+        {% load i18n %}
+        <meta charset="UTF-8">
+        <meta property="og:title" content="PetDelivery">
+        <meta property="og:site_name" content="Карго-перевозки домашних животных">
+        <meta property="og:url" content="http://127.0.0.1:8000/">
+        <meta property="og:description" content="Ищете надежного брокера? Тогда Вам сюда">
+        <meta property="og:image" content="{% static '/images/meta.png' %}">
+        <meta property="og:image:width" content='250'>
+        <meta property="og:image:height" content='190'>
+
+        <link rel="shortcut icon" type="image/png" href="{% static '/images/favicon.png' %}">
+        <link rel="stylesheet" href="{% static '/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src={% static "/app.js" %}></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:wght@500;800|Montserrat:wght@300;500;600;800;900&amp;subset=cyrillic-ext" rel="stylesheet"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        {% recaptcha_init %}
+        {% recaptcha_ready action_name='homepage' %}
+    </head>  
+    <body style="background:background: -webkit-linear-gradient(90deg, rgb(178, 209, 226), rgb(149, 197, 179));
+    background: linear-gradient(90deg, rgb(178, 209, 226), rgb(149, 197, 179));">
+        <header class="header" id='header'>
+            <div class="wrapper">
+                <div class="header_inner">
+                    <div class="logo"><span>PetDelivery</span></div>
+
+                    <form action="{% url 'set_language' %}" method='POST' class='form_i18n'>
+                        {% csrf_token %}
+                        <input name='next' type='hidden' value='{{ redirect_to }}'>
+                        <select name='language' class='language_select'>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value = '{{ language.code }}'{% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type='submit' value='Go' class='go'>
+                    </form>
+                    
+                    
+                    <nav class="nav" id='nav'>
+                        <a class="nav_link" href="{% url 'home' %}" data-scroll='#intro'>{% trans "Главная" %}</a>
+                        <a class="nav_link" href="{% url 'home' %}#about__us" data-scroll='#about__us'>{% trans "О нас" %}</a>
+                        <a class="nav_link" href="{% url 'reviews' %}">{% trans "Отзывы" %}</a>
+                        <a class="nav_link" href="{% url 'products' %}">{% trans "Товары и услуги" %}</a>
+                    </nav>
+
+                    <div class="nav_toggle" id="nav_toggle">
+                        <span class="nav_toggle__item">Menu</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+
+        {% block footer %}
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="TT">
+                    <div>{% trans "Эл.почта" %}: <a href='http://petdelivery.moscow@gmail.com/' style='text-decoration:none;color:azure;'>petdelivery.moscow@gmail.com</a><br>
+                    <br>©2004-2023. {% trans "Все права защищены.Ссылка на все материалы сайта обязательна." %}</div>
+                    <br>
+                    <div class="tel_number">
+                        {% trans "Контактный телефон" %}: +7(933)-338-48-79</div>
+                </div>
+                <div class="icon_group">
+                    <a class="social" href="https://vk.com/id393234254" target="_blank">
+                        <img class="social_icon" src="{% static '/images/VK_black.png'%}">
+                    </a>
+                    <a class="social" href=" https://api.whatsapp.com/send?phone=79333384879" target="_blank">
+                        <img class="social_icon" src="{% static '/images/WhatsApp_black.png'%}">
+                    </a>
+                    <a class="social" href="https://t.me/AnBarkar92" target="_blank">
+                        <img class="social_icon_1" src="{% static '/images/Telegram_black.png'%}">
+                    </a>
+                </div>
+            
+               
+                
+            </div>  
+        </footer>
+        {% endblock %}
+    </body>
+</html>
+
+
+
+
+

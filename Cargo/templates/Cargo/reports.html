@@ -1,0 +1,92 @@
+{% extends 'Cargo/base.html' %}
+
+{% load i18n static %}
+
+{% block title%}{% trans "Видеоотчеты" %}{% endblock %}
+
+{% block content %}
+    <div class='container' id='container'>
+        <div id="arrows_site">
+            <div class="go-up" title="{% trans "Вверх" %}" id='ToTop'>⇧</div>
+        </div>
+        {% if video_list %}
+        {% for video in video_list%}
+
+            <div id="media_block" class="media_block" style="background-color:#b4f8c9">
+                <div class='video_title'>
+                    {{video.title}}
+                </div>
+
+                {% if video.title_image %}
+                    <div style='position:relative' class="image_wrapper">
+                        <a href="{% url 'watch_video' video.id %}" class='review'><img class="title_cargo_img" src="{{ video.title_image.url }}"></a>
+                        <div class="wrapper_round" style="pointer-events:none">
+                            <div class="round" style="margin-right:0" >
+                                <div class="play"></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if video.description %}
+                    <div class="video_description" style="padding:20px 20px; text-align:justify">
+                        {{ video.description }}
+                    </div>
+                {% endif %}
+
+               
+                <div class='media_flex_block'>
+
+                    {% if video.addit_image_1 %}
+                        <img class='cargo_img' src='{{ video.addit_image_1.url }}'>
+                    {% endif %}
+
+                    {% if video.addit_image_2 %}
+                        <img class='cargo_img' src='{{ video.addit_image_2.url }}'>
+                    {% endif %}
+
+                    {% if video.addit_image_3 %}
+                        <img class='cargo_img' src='{{ video.addit_image_3.url }}'>
+                    {% endif %}
+
+                    {% if video.addit_image_4 %}
+                        <img class='cargo_img' src='{{ video.addit_image_4.url }}'>
+                    {% endif %}
+
+                </div>
+                <div class="datefield">
+                    {{ video.create_at_date }}
+                </div>
+            </div>
+
+        {% endfor %}
+        {% else %}
+        <div class="else" style="height:100vh; text-align:center;">
+            <img class='else_img' src="{% static '/images/else.png' %}">
+            <span class='text_else'>"{% trans "Тут пока ничего нет..." %}"</span>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        if ($(window).scrollTop() >= 150) $("#ToTop").fadeIn(800);
+
+        $(window).scroll(function(){
+            if ($(window).scrollTop() <= 150) $("#ToTop").fadeOut(800);
+            else $("#ToTop").fadeIn(800);
+        });
+        
+        
+        $("#ToTop").click(function(){$("html,body").animate({scrollTop:0}, 800)});
+        
+        $('#nav_toggle').on('click', function(event){
+            event.preventDefault()
+        
+        
+            $(this).toggleClass('active'); 
+            $('#nav').toggleClass('active');
+            $('#header').toggleClass('active');
+           
+        });
+      </script>
+{% endblock %}

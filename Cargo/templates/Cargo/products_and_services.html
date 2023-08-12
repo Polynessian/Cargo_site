@@ -1,0 +1,100 @@
+{% extends 'Cargo/base.html' %}
+
+{% load i18n static %}
+
+{% block title %}{% trans "Товары и услуги" %}{% endblock %}
+
+{% block content %}
+<div class='forms_container' style='height:1700px;max-width:unset; background: -webkit-linear-gradient(90deg, #6340a2,#17dba3,#0b7373);
+    background: linear-gradient(90deg, #6340a2,#17dba3,#0b7373);border-radius:unset'>
+    <div class='wrapper_product'>
+        <div class='wrapper_product_header'> 
+            <h1 class='forms_header_product'>{% trans "Сопутствующие товары" %}</h1>
+            <div class='blur_glass'>
+                <span>{% trans "Прибретение нижеуказанных товаров и услуг возможно только при офоромлении заявки на перевозку животного" %}</span>
+            </div>
+        </div>
+        {% if products %}
+        {% for product in products %}
+
+        <div class="blur_glass_product">
+            <div class='title_flex' style=' margin-bottom: 10px; text-align:center'>{{ product.title }}</div>
+
+            <div class='photo_description_slider'>
+                <div class='slider_wrapper'>
+                    <div class='slider' data-slider> 
+                        <img class='product_img' style='float:left' src="{{ product.product_image_1.url}}">
+
+                        {% if product.product_image_2 %}
+                            <img class='product_img' src="{{ product.product_image_2.url }}">
+                        {% endif %}
+
+                        {% if product.product_image_3 %}
+                        <img class='product_img' src="{{ product.product_image_3.url }}">
+                        {% endif %}
+
+                        {% if product.product_image_4 %}
+                        <img class='product_img' src="{{ product.product_image_4.url }}">
+                        {% endif %}
+                    </div>
+                   
+
+                   
+                </div>
+                    
+                {% if product.description %}
+                <div class='second_part_flex'>
+                    {{ product.description }}<br>
+                    {% if product.price %}
+                          <span style='font-weight:bold; font-size:25px'>{{ product.price }} Р<span>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+               
+            </div>
+        
+        </div>
+        
+       
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    if ($(window).scrollTop() >= 150) $("#ToTop").fadeIn(800);
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() <= 150) $("#ToTop").fadeOut(800);
+        else $("#ToTop").fadeIn(800);
+    });
+        
+        
+    $("#ToTop").click(function(){$("html,body").animate({scrollTop:0}, 800)});
+        
+    $('#nav_toggle').on('click', function(event){
+        event.preventDefault()
+        
+        
+        $(this).toggleClass('active'); 
+        $('#nav').toggleClass('active');
+        $('#header').toggleClass('active');
+           
+    });
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $("[data-slider]").slick({
+
+        infinite: true,
+        fade: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    })
+    
+</script>
+
+{% endblock  %}

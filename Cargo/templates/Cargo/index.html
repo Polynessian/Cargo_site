@@ -1,0 +1,251 @@
+{% extends 'Cargo/base.html' %}
+
+{% load i18n static recaptcha3 %}
+{% recaptcha_init %}
+{% recaptcha_ready action_name='addreviews' %}
+
+{% block title %}PetDelivery{% endblock %}
+
+
+{% block content %}
+<div class="intro" id='intro'>
+    <div class="container"> 
+        <div class="intro_flex_wrapper"> 
+            <div class="cargo_wrapper">
+                <div class="cargo" id='cargo'>Cargo {% trans 'доставка' %}<br>{% trans 'домашних животных' %}</div>
+               
+                <a class="play-button-outer" href="{% url 'reports' %}">
+                    <div class="play-button"></div>
+                </a>
+                
+            </div>
+            <div class="dog_container">
+                <div id="welcome">Welcome to our website</div>
+                <img src="{% static '/images/2023-05-20 1108.30.png' %}" class="welcome_photo">
+            </div>  
+            
+            <div class="button">
+                <a class="reports" href="{% url 'reports' %}">{% trans 'Видеоотчеты' %}</a>
+                    
+                <div class="round">
+                    <div class="play"></div>
+                </div>
+            </div>
+           
+        </div>
+    </div><!--container-->
+</div><!--intro-->
+
+<div class="iata">
+    
+    <div class="peel">
+        <img class="airplane" src="{% static '/images/airplane.jpg' %}">
+        <div class="container">
+            <div class="delivery_title">{% trans 'Доставка животных авиатранспортом в соответствии со стандартом IATA' %} 
+            </div>    
+            <div class="iata_text">
+                <p>IATA(The International Air Transport Association) - 
+                {% trans 'Международная ассоциация воздушного транспорта, неправительственная организация. Штаб-квартира находится в Монреале. Европейский центр — в Женеве. IATA имеет 101 представительство по всему миру' %}.<br>
+                <br>
+                <br>
+                {% trans "Правила IATA о живых животных (LAR) являются мировым стандартом перевозки животных коммерческими авиакомпаниями." %}
+                {% trans "Будь то домашнее животное или животное, перевозимое в зоологических или сельскохозяйственных целях, либо по любой другой причине," %}
+                {% trans "цель LAR - обеспечить безопасную и гуманную перевозку всех животных по воздуху. 46-е издание правил вступило в силу 1 января 2020 года." %} </p>   
+            </div>  
+            <img src="{% static '/images/iata.png' %}">     
+        </div><!--container-->
+    </div><!--peel-->
+</div><!--iata-->
+
+<div class="spliter"></div>
+<div class="about__us" id='about__us'>
+    <div class="container">
+        <div class="logo" id="logo">PetDelivery</div>
+        <div class="about_title">{% trans "О нас" %}</div>
+
+
+        <div class="about_text">
+            <p>{% trans "Мы предоставляем услуги по организации доставки домашних животных уже" %}
+            <span>{% trans "более 20 лет" %}</span>
+            {% trans "и за это время у нас образовалась огромная база клиентов, среди которых ведущие Российские и зарубежные заводчики высокопородных кошек и собак." %}</p>
+            <h2>{% trans "Мы предлагаем вам следующее:" %}</h2>
+            <hr color="#e9e921">
+            <ul>
+                <li>{% trans "Наша компания организовывает карго-доставку (авиаперевозку без сопровождения) ваших животных в соответствии с международным стандартом IATA." %}
+                </li>
+                    
+                <li>{% trans "Мы подготавливаем всю необходимую документацию для перевозки питомца, от вас требуется только вет.паспорт со всеми необходимыми отметками (вакцинация, чип, обработка от блох и клещей)." %}
+                </li>
+                    
+                <li>{% trans "Предоставляем услуги по передержке животного до момента отправления." %}</li>
+                    
+                <li>{% trans "Обеспечиваем всем необходимым в дороге (поилка, корм, пеленки и т.п.)." %}</li>
+            </ul>
+            <h2>{% trans "Почему стоит обратиться именно к нам?" %}</h2>
+            <hr color="#e9e921">
+            <div class="end">
+                {% trans "В последние годы объемы рынка значительно выросли, также вырос спрос на данные услуги и, как следствие, появилось большое количество предложений от частных лиц, среди которых большинство не имеет ни всех необходимых знаний, ни опыта." %}
+                {% trans "Некомпетентность данных брокеров зачастую определяет их неспособность организовать гуманную перевозку, что приводит к психологическим нарушениям, стрессу и, в некоторых случаях, к смерти животного." %}
+                <span>{% trans "Мы гарантируем безопасную и гуманную доставку вашего питомца." %}</span>
+            </div>
+        </div><!--about_text-->
+    </div> <!--container-->
+</div> <!--about__us-->
+
+<div class="work">
+    <div class="spliter"></div>
+    <div class="container">
+
+        <h2>{% trans "Как мы работаем?" %}</h2>
+        <br>
+        <hr class='work_hr' color="#e9e921">
+        <div class="shell">
+            <div class="digit_items">
+                <div class="round">
+                    <div class="digit">1</div>
+                </div>
+                <div class="description">{% trans "Вы связываетесь с нами в любое время с 10:00 до 21:00 мск по контактному номеру или заполняете форму на отправление заявки ниже. Также с нами можно связаться через социальные сети." %}</div>
+            </div>
+            <div class="digit_items">
+                <div class="round">
+                    <div class="digit">2</div>
+                </div>
+                <div class="description">{% trans "Мы вас консультируем, затем, после уточнения всех нюансов, связываемся с продавцом и в ближайшее время забираем к себе питомца на передержку до отправления." %}</div>
+            </div>
+            <div class="digit_items">
+                <div class="round">
+                    <div class="digit">3</div>
+                </div>
+                <div class="description">{% trans "Оформляем все необходимые документы и организовываем доставку." %}</div>
+            </div>
+            <div class="flex_ender">
+                <div class="first_flex_element">
+                    <div class="requests">
+                        <div class="request_title">{% trans "Оставьте заявку" %}</div>
+                        <!--<hr color="#093b46">-->
+                        <div class="request_subtitle">{% trans "Мы свяжемся с вами" %} <br>{% trans "в ближайшее время" %}</div> 
+                            
+                    </div>
+                    
+                    <form class="send" method="POST" action="">
+                    {% csrf_token %}
+                        <div class="buttons"> 
+                            <input type="text" name="name" id="name_button" placeholder="{% trans "Ваше имя"%}" required>
+                            <input type="tel" autocorrect="off" autocapitalize="off" 
+                            name="tel" placeholder="+7(___) ___-__-__" required maxlength="19" id="tel" required>
+                            <input type="email" name="email" id="email" placeholder="{% trans 'Ваш' %} email" required>
+
+                            <textarea name="message" id="message" cols='45' rows='4' placeholder="{% trans "Задайте интересующий вас вопрос" %}"></textarea>
+                        </div>
+                            
+                        <button class="send_email" type="submit">{% trans "Отправить" %}</button>
+                    </form>
+                </div>
+                <div class="second_flex_element">
+                    <div class="index_slider_wrapper">
+                        <div class="slider" data-slider>
+                            <img class="index_cargo_img" src="{% static '/images/фото1.jpeg' %}">
+                            <img class="index_cargo_img" src="{% static '/images/фото2.jpeg' %}">
+                            <img class="index_cargo_img" src="{% static '/images/фото3.jpeg' %}">
+                            <img class="index_cargo_img" src="{% static '/images/фото4.jpeg' %}">
+                            
+                            <img class="index_cargo_img" src="{% static '/images/фото7.jpeg' %}">
+                            <img class="index_cargo_img" src="{% static '/images/фото8.jpeg' %}">
+                        </div> 
+                    </div>
+                    <div class='transition_wrapper'>
+                        <a class="transition" href="{% url 'products' %}"><span>{% trans "Посмотрите, что мы предлагаем" %}</span></a>
+                    </div>
+                </div>
+            </div>
+               
+        </div><!--shell-->
+    </div> <!--container-->                                                                                                                                                             
+</div> <!--work-->
+
+
+    <script>
+        let inp = document.querySelector('#tel');
+
+//Проверяем фокус 
+inp.addEventListener('focus', _ => {
+    //Проверка на наличие символов
+    if(!/^\+\d*$/.test(inp.value))
+    inp.value = '+';
+});
+
+inp.addEventListener('keypress', e => {
+    //Отменяем ввод не цифр
+    if(!/\d/.test(e.key))
+    e.preventDefault();
+});
+    </script>
+
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $("[data-slider]").slick({
+
+            infinite: true,
+            fade: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        })
+        
+    </script>
+    <script>
+
+        /* fixed-header*/
+        $(function() {
+            var header = $("#header"),
+            introH = $("#intro").innerHeight(),
+            scrollOffset = 0; 
+
+            $(window).on('scroll', function() {
+
+                scrollOffset = $(this).scrollTop();
+
+                if (scrollOffset >= introH + 500) {
+                    header.addClass('fixed');
+                } else {
+                    header.removeClass('fixed');
+                }
+
+                
+            })
+        });
+        /*smooth scroll*/
+
+        $("[data-scroll]").on('click', function(event) {
+
+            event.preventDefault();
+            
+            var $this = $(this),
+            block = $this.data('scroll'),
+            blockOffset = $(block).offset().top;
+            
+            $('#nav a').removeClass('active');
+            $this.addClass('active');
+
+            $('html, body').animate({
+                scrollTop: blockOffset
+            });
+        });
+        
+        $('#nav_toggle').on('click', function(event){
+            event.preventDefault()
+        
+        
+            $(this).toggleClass('active'); 
+            $('#nav').toggleClass('active');
+            $('#header').toggleClass('active');
+            
+           
+        });
+    </script>
+    
+    
+
+
+{% endblock %}

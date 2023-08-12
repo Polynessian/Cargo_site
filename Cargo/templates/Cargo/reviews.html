@@ -1,0 +1,114 @@
+
+{% extends 'Cargo/base.html' %}
+
+{% load i18n static %}
+{% block title %}{% trans "Отзывы" %}{% endblock %}
+
+{% block content %}
+    
+    
+    <div id='container' class='container' style='background: linear-gradient(rgb(178, 209, 226), rgb(149, 197, 179)) center no-repeat;
+    max-width: 100%; display:flex; align-items:center; flex-direction:column'>
+        
+        <div id="arrows_site">
+            <div class="go-up" title="{% trans "Вверх" %}" id='ToTop'>⇧</div>
+        </div>
+       
+        <!--..............-->
+        <!--Review's block-->
+        <!--..............-->
+        
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    
+        <div class="reviews_block">
+            <div class="addreview_wrapper">
+                <a href="{% url 'addreviews' %}" class="addreview" id='addreview'>{% trans "Добавить отзыв" %}</a>
+            </div>
+            {% if review %}
+            {% for el in review %}
+               
+                <div class='media_block'>
+                    <div class='title_flex'>
+                        <span class="t">{{ el.title }}</span>
+                        <span class="t">{{ el.way }}</span>
+                    </div>
+                    <div class='media_flex_block'>
+                        {% for p in photos %}
+                            
+                            {% if p.name_id == el.id%}
+                                    
+                                <img class="cargo_img" src='{{ p.photo.url }}'>
+                
+
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                    <br>
+                    <span class="content">
+                        {{ el.content }}
+                    </span>
+                    <div class='datefield'>
+                        {{ el.date }}
+                    </div>
+                </div>
+                    {% if el.answer %}
+                        <div class="answer" id="answer">
+                            <div class='title_answer' style="margin-bottom:15px;">
+                                <span style="color:#93885d; padding: 5px 0;">{% trans "В ответ" %} @<span style="text-decoration:underline">{{el.title}}</span></span>
+                                <span style='padding: 5px 0;'>{% trans "Администратор" %}</span>
+                            </div>
+                            {{ el.answer }}
+                        </div>
+                    {% endif %}
+                    <br> 
+                    <br>
+                    <div style="height:50px"></div>
+            {% endfor %}
+            
+
+            {% else %}
+            <div class="else" style="height:100vh; text-align:center;">
+                <img class='else_img' src="{% static '/images/else.png' %}">
+                <span class='text_else'>"{% trans "Тут пока ничего нет..." %}</span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        if ($(window).scrollTop() >= 150) $("#ToTop").fadeIn(800);
+
+        $(window).scroll(function(){
+            if ($(window).scrollTop() <= 150) $("#ToTop").fadeOut(800);
+            else $("#ToTop").fadeIn(800);
+        });
+        
+        
+        $("#ToTop").click(function(){$("html,body").animate({scrollTop:0}, 800)});
+        
+        $('#nav_toggle').on('click', function(event){
+            event.preventDefault();
+        
+        
+            $(this).toggleClass('active'); 
+            $('#nav').toggleClass('active');
+            $('#header').toggleClass('active');
+            $('#addreview').toggleClass('hidden');
+           
+        });
+     </script>
+    
+     
+{% endblock %}

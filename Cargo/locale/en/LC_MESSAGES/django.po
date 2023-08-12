@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-28 12:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: Cargo/templates/Cargo/add_reviews.html:9 Cargo/templates/Cargo/base.html:57
+#: Cargo/templates/Cargo/reviews.html:5
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: Cargo/templates/Cargo/add_reviews.html:17
+msgid "Оставить отзыв"
+msgstr "Leave feedback"
+
+#: Cargo/templates/Cargo/add_reviews.html:28
+msgid "Фотографии не выбраны"
+msgstr "No photos selected"
+
+#: Cargo/templates/Cargo/add_reviews.html:29
+msgid "Выбрать"
+msgstr "Select"
+
+#: Cargo/templates/Cargo/add_reviews.html:33
+#: Cargo/templates/Cargo/index.html:141
+msgid "Отправить"
+msgstr "Send"
+
+#: Cargo/templates/Cargo/base.html:55
+msgid "Главная"
+msgstr "Main"
+
+#: Cargo/templates/Cargo/base.html:56
+#: Cargo/templates/Cargo/index.html:64
+msgid "О нас"
+msgstr "About us"
+
+#: Cargo/templates/Cargo/base.html:58
+#: Cargo/templates/Cargo/products_and_services.html:5
+msgid "Товары и услуги"
+msgstr "Products and services"
+
+#: Cargo/templates/Cargo/base.html:73
+msgid "Эл.почта"
+msgstr "Email"
+
+#: Cargo/templates/Cargo/base.html:74
+msgid "Все права защищены.Ссылка на все материалы сайта обязательна."
+msgstr "All rights reserved. The link to all materials of site is required."
+
+#: Cargo/templates/Cargo/base.html:77
+msgid "Контактный телефон"
+msgstr "Contact number"
+
+#: Cargo/templates/Cargo/index.html:15
+msgid "доставка"
+msgstr "delivery of"
+
+#: Cargo/templates/Cargo/index.html:15
+msgid "домашних животных"
+msgstr "domestic animals"
+
+#: Cargo/templates/Cargo/index.html:28 Cargo/templates/Cargo/reports.html:5
+msgid "Видеоотчеты"
+msgstr "Video reports"
+
+#: Cargo/templates/Cargo/index.html:44
+msgid "Доставка животных авиатранспортом в соответствии со стандартом IATA"
+msgstr "Delivery of animals by air in accordance with the IATA standart"
+
+#: Cargo/templates/Cargo/index.html:48
+msgid "Международная ассоциация воздушного транспорта, неправительственная организация. Штаб-квартира находится в Монреале. Европейский центр — в Женеве. IATA имеет 101 представительство по всему миру"
+msgstr "International Air Transport Association, non-governmental organization. The headquarters is located in Montreal. European center - in Geneva. IATA has 101 offices worldwide"
+
+#: Cargo/templates/Cargo/index.html:51
+msgid "Правила IATA о живых животных (LAR) являются мировым стандартом перевозки животных коммерческими авиакомпаниями."
+msgstr "The IATA Live Animal Regulations (LAR) is the worldwide standard for the carriage of animals by commercial airlines."
+
+#: Cargo/templates/Cargo/index.html:52
+msgid "Будь то домашнее животное или животное, перевозимое в зоологических или сельскохозяйственных целях, либо по любой другой причине,"
+msgstr "Whether it is a pet animal or an animal transported in zoological or agricultural purposes, or for any other reason,"
+
+#: Cargo/templates/Cargo/index.html:53
+msgid "цель LAR - обеспечить безопасную и гуманную перевозку всех животных по воздуху. 46-е издание правил вступило в силу 1 января 2020 года."
+msgstr "the purpose of the LAR is to ensure the safe and humanable transport of all animals by air. The 46th edition of the rules came into effect on January 1, 2020."
+
+
+
+#: Cargo/templates/Cargo/index.html:68
+msgid "Мы предоставляем услуги по организации доставки домашних животных уже"
+msgstr "We have been providing pet delivery services for"
+
+#: Cargo/templates/Cargo/index.html:69
+msgid "более 20 лет"
+msgstr "over 20 years"
+
+#: Cargo/templates/Cargo/index.html:70
+msgid "и за это время у нас образовалась огромная база клиентов, среди которых ведущие Российские и зарубежные заводчики высокопородных кошек и собак."
+msgstr "and during this time we have formed a huge customer base, including leading Russian and foreign breeders of high-breed cats and dogs."
+
+#: Cargo/templates/Cargo/index.html:71
+msgid "Мы предлагаем вам следующее:"
+msgstr "We offer you the following:"
+
+#: Cargo/templates/Cargo/index.html:74
+msgid "Наша компания организовывает карго-доставку (авиаперевозку без сопровождения) ваших животных в соответствии с международным стандартом IATA."
+msgstr "Our company organizes cargo delivery (unaccompanied air transportation) of your animals in accordance with the international IATA standard."
+
+#: Cargo/templates/Cargo/index.html:77
+msgid "Мы подготавливаем всю необходимую документацию для перевозки питомца, от вас требуется только вет.паспорт со всеми необходимыми отметками (вакцинация, чип, обработка от блох и клещей)."
+msgstr "We prepare all the necessary documentation for transporting a pet, you only need a veterinary passport with all the necessary marks (vaccination, chip, flea and tick treatment)."
+
+#: Cargo/templates/Cargo/index.html:80
+msgid "Предоставляем услуги по передержке животного до момента отправления."
+msgstr "We provide services for overexposure of the animal until the moment of departure."
+
+#: Cargo/templates/Cargo/index.html:82
+msgid "Обеспечиваем всем необходимым в дороге (поилка, корм, пеленки и т.п.)."
+msgstr "We provide everything you need on the road (drinking bowl, food, diapers, etc.)."
+
+#: Cargo/templates/Cargo/index.html:84
+msgid "Почему стоит обратиться именно к нам?"
+msgstr "Why is it worth contacting us?"
+
+#: Cargo/templates/Cargo/index.html:87
+msgid "В последние годы объемы рынка значительно выросли, также вырос спрос на данные услуги и, как следствие, появилось большое количество предложений от частных лиц, среди которых большинство не имеет ни всех необходимых знаний, ни опыта."
+msgstr "In recent years, the market volumes have grown significantly, the demand for these services has also grown and, as a result, a large number of offers from individuals have appeared, among which the majority do not have all the necessary knowledge or experience."
+
+#: Cargo/templates/Cargo/index.html:88
+msgid "Некомпетентность данных брокеров зачастую определяет их неспособность организовать гуманную перевозку, что приводит к психологическим нарушениям, стрессу и, в некоторых случаях, к смерти животного."
+msgstr "Incompetence of these brokers often determines their inability to organize humanable transportation, which leads to psychological disorders, stress and, in some cases, death of the animal."
+
+#: Cargo/templates/Cargo/index.html:89
+msgid "Мы гарантируем безопасную и гуманную доставку вашего питомца."
+msgstr "We guarantee the safe and humanable delivery of your pet."
+
+#: Cargo/templates/Cargo/index.html:99
+msgid "Как мы работаем?"
+msgstr "How are we working?"
+
+#: Cargo/templates/Cargo/index.html:107
+msgid "Вы связываетесь с нами в любое время с 10:00 до 21:00 мск по контактному номеру или заполняете форму на отправление заявки ниже. Также с нами можно связаться через социальные сети."
+msgstr "You contact us at any time from 10:00 to 21:00 Moscow time using the contact number or fill out the application form below. You can also contact us through social networks."
+
+#: Cargo/templates/Cargo/index.html:113
+msgid "Мы вас консультируем, затем, после уточнения всех нюансов, связываемся с продавцом и в ближайшее время забираем к себе питомца на передержку до отправления."
+msgstr "We consultate you, after clarifying all the nuances, we contact the seller and in the near future we will take the pet to us for overexposure before shipment."
+
+#: Cargo/templates/Cargo/index.html:119
+msgid "Оформляем все необходимые документы и организовываем доставку."
+msgstr "We prepare all the necessary documents and arrange delivery."
+
+#: Cargo/templates/Cargo/index.html:124
+msgid "Оставьте заявку"
+msgstr "Leave a request"
+
+#: Cargo/templates/Cargo/index.html:126
+msgid "Мы свяжемся с вами"
+msgstr "We'll get touch with you"
+
+#: Cargo/templates/Cargo/index.html:126
+msgid "в ближайшее время"
+msgstr "shortly"
+
+#: Cargo/templates/Cargo/index.html:133
+msgid "Ваше имя"
+msgstr "Name"
+
+#: Cargo/templates/Cargo/index.html:136
+msgid "Ваш"
+msgstr "Your"
+
+#: Cargo/templates/Cargo/index.html:138
+msgid "Задайте интересующий вас вопрос"
+msgstr "Ask a question"
+
+#: Cargo/templates/Cargo/index.html:157
+msgid "Посмотрите, что мы предлагаем"
+msgstr "See what we offer"
+
+#: Cargo/templates/Cargo/products_and_services.html:12
+msgid "Сопутствующие товары"
+msgstr "Related products"
+
+#: Cargo/templates/Cargo/products_and_services.html:14
+msgid "Прибретение нижеуказанных товаров и услуг возможно только при офоромлении заявки на перевозку животного"
+msgstr "The purchase of the following goods and services is possible only when applying for the transportation of an animal"
+
+#: Cargo/templates/Cargo/reports.html:10 Cargo/templates/Cargo/reviews.html:14
+msgid "Вверх"
+msgstr "To top"
+
+#: Cargo/templates/Cargo/reports.html:66 Cargo/templates/Cargo/reviews.html:84
+msgid "Тут пока ничего нет..."
+msgstr "There is nothing here yet..."
+
+#: Cargo/templates/Cargo/reviews.html:36
+msgid "Добавить отзыв"
+msgstr "Add a review"
+
+#: Cargo/templates/Cargo/reviews.html:69
+msgid "В ответ"
+msgstr "In reply"
+
+#: Cargo/templates/Cargo/reviews.html:70
+msgid "Администратор"
+msgstr "Administrator"
+

@@ -1,0 +1,75 @@
+{% extends 'Cargo/base.html' %}
+
+{% load i18n static recaptcha3 %}
+
+{% recaptcha_init %}
+
+{% recaptcha_ready action_name='addreviews' %}
+
+{% block title %}{% trans "Отзывы" %}{% endblock %}
+
+{% block content %}
+ 
+    <div id="forms_wrapper" class="forms_wrapper">
+      <div class='margin'></div>
+      <div class="forms_container">
+          
+        <h1 class='forms_header'>{% trans "Оставить отзыв" %}</h1>
+            
+        <form action="" method="POST" class="review" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class='flex_forms'>
+            {{ form.title }}
+            {{ form.way }}
+            {{ form.content }}
+            <div class="input_wrapper">
+              <input name="file" type="file" id="file" class="field_input__file" multiple>
+              <label for="file" class="input_file_button">
+                <div class="file_fake" id="fake_file">{% trans "Фотографии не выбраны" %}</div>
+                <div class="file_loaded">{% trans "Выбрать" %}</div>
+              </label>
+            </div>
+            {{ form.captcha }}
+            <button class="send_email" action="reviews" type="submit">{% trans "Отправить" %}</button>
+          </div>
+        </form>
+            
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $('#nav_toggle').on('click', function(event){
+          event.preventDefault()
+      
+      
+          $(this).toggleClass('active'); 
+          $('#nav').toggleClass('active');
+          $('#header').toggleClass('active');
+        
+        });
+
+        let fields = document.querySelectorAll('.field_input__file');
+        Array.prototype.forEach.call(fields, function(input) {
+          let label = input.nextElementSibling,
+            labelVal = label.querySelector('#fake_file').innerText;
+
+          input.addEventListener('change', function(e) {
+            let count_files = '';
+            if (this.files && this.files.length >= 1)
+              count_files = this.files.length;
+
+            if (count_files)
+              label.querySelector('#fake_file').innerText = 'Выбрано фотографий: ' + count_files;
+            else 
+              label.querySelector('#fake_file').innerText = labelVal;
+          });
+        });
+
+        
+    </script>
+  
+{% endblock %}
+
+{% block footer %}{% endblock %}
